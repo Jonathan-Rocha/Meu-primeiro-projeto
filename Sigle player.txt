@@ -1,0 +1,27 @@
+****PARA ATIVAR O SILGLE PLAYER BASTA ADICIONAR OS PAÇOS A BAIXO****
+
+
+//criar variável de erro
+let chanceDeErrar = 0;
+
+//criar a função de movimento do oponente
+function movimentaRaqueteOponente(){
+  velocidadeYOponente = yBolinha -yRaqueteOponente - raqueteComprimento / 2 - 30;
+  yRaqueteOponente += velocidadeYOponente + chanceDeErrar +
+  calculaChanceDeErrar()
+}
+
+//criar a função para calcular o erro
+function calculaChanceDeErrar() {
+  if (pontosDoOponente >= meusPontos) {
+    chanceDeErrar += 1
+    if (chanceDeErrar >= 39){
+    chanceDeErrar = 40
+    }
+  } else {
+    chanceDeErrar -= 1
+    if (chanceDeErrar <= 35){
+    chanceDeErrar = 35
+    }
+  }
+}
